@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "PecuniaExt",
+    "version": "1.0",
+
+    "description": "Simple financial extension to convert currencies.",
+
+
+    "icons": {
+        "48": "icons/pecunia-48.png",
+        "96": "icons/pecunia-96.png"
+    },
+
+    "permissions": ["activeTab","contextMenus"],
+
+
+    "browser_action":{
+        "default_icon": "icons/pecunia-32.png",
+        "default_title": "PecuniaExt",
+        "default_popup": "popup/menu.html"
+    },
+
+    "background": {
+        "scripts": ["main.js"]
+    }
+}
