@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const outputCurrencyElement = document.getElementById("output-currency-select")
     let outputCurrency
     let rate
-    function updateConversion(){
+    async function updateConversion(){
       inputValue = inputCurrencyValueElement.value;
       inputCurrency = inputCurrencyElement.value;
       outputCurrency = outputCurrencyElement.value;
+      const response = await fetch('https://v6.exchangerate-api.com/v6/' + API_KEY + '/latest/' + inputCurrency)
+      const data = await response.json();
+      rate = data.conversion_rates[outputCurrency];
       document.getElementById("output-currency-value").innerHTML = inputValue * rate
-      console.log(inputValue);
-      console.log(inputCurrency);
-      console.log(API_KEY)
+      console.log('input value : ' + inputValue);
+      console.log('input currency : ' + inputCurrency);
+      console.log('output currency : ' + outputCurrency);
+      console.log('API key : ' + API_KEY)
+      console.log('rate : ' + rate)
     }
     inputCurrencyValueElement.addEventListener("input", updateConversion);
     inputCurrencyElement.addEventListener("change", updateConversion)
