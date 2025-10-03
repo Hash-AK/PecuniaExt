@@ -25,6 +25,4 @@ document.addEventListener("DOMContentLoaded", function() {
     outputCurrencyElement.addEventListener("change", updateConversion)
 
 
-
-
 });
