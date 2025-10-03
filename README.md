@@ -1,12 +1,12 @@
 # PecuniaExt
 
 A simple currency conversion browser extension.
-
+Made for siege.hackclub.com  
 ## Installation
 
-1. Clone the repository.
-2. Open your browser's extension management page.
-3. Enable "Developer mode".
+1. Clone the repository : ```git clone https://github.com/Hash-AK/PecuniaExt```
+2. Open your browser's extension management page
+3. Enable "Developer mode"
 4. Click "Load unpacked" and select the cloned repository directory.
 
 ## Usage
