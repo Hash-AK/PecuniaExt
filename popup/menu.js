@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const outputCurrencyElement = document.getElementById("output-currency-select")
     let outputCurrency
     let rate
+    
     async function updateConversion(){
       inputValue = inputCurrencyValueElement.value;
       inputCurrency = inputCurrencyElement.value;
@@ -19,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('output currency : ' + outputCurrency);
       console.log('API key : ' + API_KEY)
       console.log('rate : ' + rate)
+      let valueFromLocalStorageObj = await browser.storage.local.get("value");
+      let valueFromLocalStorageData = valueFromLocalStorageObj.value;
+      document.getElementById("local-storage-output").innerHTML = valueFromLocalStorageData;
+      browser.storage.local.remove("value");
+
     }
     inputCurrencyValueElement.addEventListener("input", updateConversion);
     inputCurrencyElement.addEventListener("change", updateConversion)
