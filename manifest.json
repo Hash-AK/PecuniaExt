@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "PecuniaExt",
     "version": "1.0",
 
@@ -11,10 +11,10 @@
         "96": "icons/pecunia-96.png"
     },
 
-    "permissions": ["activeTab","contextMenus"],
+    "permissions": ["activeTab","contextMenus","storage"],
 
 
-    "browser_action":{
+    "action":{
         "default_icon": "icons/pecunia-32.png",
         "default_title": "PecuniaExt",
         "default_popup": "popup/menu.html"
