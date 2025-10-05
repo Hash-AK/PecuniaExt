@@ -56,7 +56,7 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
                 const amount = amountReged.replace(/,/g, '');
                 let toStore = {
                     context_value: amount,
-                    context_currency_input: currencyStr,  
+                    context_currency_input: currencyStr.toUpperCase(),  
                     };
                 browser.storage.local.set(toStore);
             }
@@ -79,6 +79,34 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
            }
            break;
+         
+        case "webpage-currency-as-input-selection":
+            console.log(info.selectionText);
+            regex = /[a-zA-Z]{3}/;
+            match = info.selectionText.match(regex);
+            if (match){
+                const currencyStr = match[0]
+                let toStore = {
+                    context_currency_input: currencyStr.toUpperCase(),
+            };
+            browser.storage.local.set(toStore);
+            }
+            break;
+        
+        case "webpage-currency-as-output-selection":
+            console.log(info.selectionText);
+            regex = /[a-zA-Z]{3}/;
+            match = info.selectionText.match(regex);
+            if (match){
+                const currencyStr = match[0]
+                let toStore = {
+                    context_currency_output: currencyStr.toUpperCase(),
+
+                };
+                browser.storage.local.set(toStore);
+            }
+            break;
+
         
     }
 });

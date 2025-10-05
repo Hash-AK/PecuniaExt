@@ -8,22 +8,39 @@ document.addEventListener("DOMContentLoaded", async function() {
     let rate
     //let valueFromLocalStorageObj = await browser.storage.local.get("value");
     //let currencyFromLocalStorageObj = await browser.storage.local.get("currency");
-    const storedData = await browser.storage.local.get(["context_value", "context_currency_input"]);
-
+    const storedData = await browser.storage.local.get(["context_value", "context_currency_input", "context_currency_output"]);
+    let dataFound = false;
     let valueFromLocalStorageData = storedData.context_value;
-    let currencyFromLocalStorageData = storedData.context_currency_input;
+    let inputCurrencyFromLocalStorage = storedData.context_currency_input;
     // document.getElementById("local-storage-output").innerHTML = valueFromLocalStorageData; not needed anymore for debug
+    let outputCurrencyFromLocalStorage = storedData.context_currency_output;
     if (valueFromLocalStorageData){
       inputCurrencyValueElement.value = valueFromLocalStorageData;
-      browser.storage.local.remove("context_value");
-      updateConversion();
+      //browser.storage.local.remove("context_value");
+      //updateConversion();
+      dataFound = true;
     }
-    if (currencyFromLocalStorageData){
-      inputCurrencyElement.value = currencyFromLocalStorageData;
-      browser.storage.local.remove("context_currency_input")
-      updateConversion();
+    if (inputCurrencyFromLocalStorage){
+      inputCurrencyElement.value = inputCurrencyFromLocalStorage;
+      //browser.storage.local.remove("context_currency_input")
+      //updateConversion();
+      dataFound = true;
     }
 
+    if (outputCurrencyFromLocalStorage){
+      outputCurrencyElement.value = outputCurrencyFromLocalStorage;
+      //browser.storage.local.remove("context_currency_output")
+      //updateConversion();
+      dataFound = true;
+    }
+    if (dataFound) {
+      await updateConversion();
+      browser.storage.local.remove([
+        "context_value",
+        "context_currency_input",
+        "context_currency_output"
+      ]);
+    }
 
     async function updateConversion(){
       inputValue = inputCurrencyValueElement.value;
