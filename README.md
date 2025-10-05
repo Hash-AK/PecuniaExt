@@ -21,3 +21,4 @@ Made for siege.hackclub.com
 30USD  
 3.5   USD  
 AED3.5  
+1,000 USD
