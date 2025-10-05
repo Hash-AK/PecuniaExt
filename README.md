@@ -17,7 +17,7 @@ Made for siege.hackclub.com
 4. The converted amount will be displayed.
 
 ## Testing
-20 CAD
-30USD
-3.5   USD
-AED3.5
+20 CAD  
+30USD  
+3.5   USD  
+AED3.5  
