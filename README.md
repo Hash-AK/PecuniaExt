@@ -14,7 +14,8 @@ Made for siege.hackclub.com
 1. Click on the extension icon in your browser.
 2. Enter the amount you want to convert.
 3. Select the input and output currencies.
-4. The converted amount will be displayed.
+4. The converted amount will be displayed.  
+5. Alternatively, you can select an amount on a webpage (either in the format [Number] [Currency], [Currency] [Number], [Number][Currency], etc), right click and select "Send to PecuniaExt". Then, click on the extension's icon, and the field Value and Input Currency will already be filled, you will just need to put an output currency!  
 
 ## Testing
 20 CAD  

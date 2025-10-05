@@ -19,3 +19,11 @@ select{
     border: 1px solid #ccc;
     padding: 5px;
 }
+hr.dotted {
+    border-top: 5px solid #bbb;
+    border-radius: 5px;
+}
+p{
+    margin: 0;
+    display: inline;
+}
