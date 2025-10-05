@@ -15,3 +15,10 @@ Made for siege.hackclub.com
 2. Enter the amount you want to convert.
 3. Select the input and output currencies.
 4. The converted amount will be displayed.
+
+## Testing
+20 CAD  
+30USD  
+3.5   USD  
+AED3.5  
+1,000 USD
