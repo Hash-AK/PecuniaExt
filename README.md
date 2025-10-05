@@ -5,6 +5,8 @@ Made for siege.hackclub.com
 I made this extension because I was tired of always seeing foreign monney and having to convert them (hint : im lazy), so I decided to make this extension.  
 It is my first real experience with JS so the code is probably very messy.
 
+![demo video](https://hc-cdn.hel1.your-objectstorage.com/s/v3/f1749825d7fb18a7db04156714350a4a05739932_2025-10-05_19-14-00.mp4)
+
 **Please Note** : This extension is currently configured and made for Firefox (Manifest V2). To make it work on Chrom[e,ium]-based browser (Manifest v3), you would need to modify a few parameter. 
 Also as it is not signed by Mozilla/Firefox it cannot be imported as a normal extension yet, just as a debug extension. 
 
