@@ -6,11 +6,19 @@ document.addEventListener("DOMContentLoaded", async function() {
     const outputCurrencyElement = document.getElementById("output-currency-select")
     let outputCurrency
     let rate
-    let valueFromLocalStorageObj = await browser.storage.local.get("value");
-    let valueFromLocalStorageData = valueFromLocalStorageObj.value;
+    //let valueFromLocalStorageObj = await browser.storage.local.get("value");
+    //let currencyFromLocalStorageObj = await browser.storage.local.get("currency");
+    const storedData = await browser.storage.local.get(["value", "currency"]);
+
+    let valueFromLocalStorageData = storedData.value;
+    let currencyFromLocalStorageData = storedData.currency;
     // document.getElementById("local-storage-output").innerHTML = valueFromLocalStorageData; not needed anymore for debug
-    inputCurrencyValueElement.value = valueFromLocalStorageData
-    browser.storage.local.remove("value");
+    if (valueFromLocalStorageData && currencyFromLocalStorageData){
+      inputCurrencyValueElement.value = valueFromLocalStorageData;
+      inputCurrencyElement.value = currencyFromLocalStorageData;
+      browser.storage.local.remove(["value", "currency"]);
+      updateConversion();
+    }
 
 
     async function updateConversion(){

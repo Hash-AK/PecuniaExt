@@ -19,10 +19,21 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
     switch (info.menuItemId){
         case "webpage-currency-selection":
             console.log(info.selectionText);
-            let toStore = {
-                value: info.selectionText,    
-                };
-            browser.storage.local.set(toStore);
+            const regex = /([0-9.,]+)\s*([a-zA-Z]{3})|([a-zA-Z]{3})\s*([0-9.,]+)/;
+            const match = info.selectionText.match(regex);
+
+            if (match){
+                const amountReged = match[1] || match[4];
+                const currencyStr = match[2] || match[3];
+                const amount = amountReged.replace(/,/g, '');
+                let toStore = {
+                    value: amount,
+                    currency: currencyStr,  
+                    };
+                browser.storage.local.set(toStore);
+            }
+
+            
             break;
     }
 });
