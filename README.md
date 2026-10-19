@@ -10,7 +10,7 @@ It is my first real experience with JS so the code is probably very messy.
 **Please Note** : This extension is currently configured and made for Firefox (Manifest V2). To make it work on Chrom[e,ium]-based browser (Manifest v3), you would need to modify a few parameter. 
 Also as it is not signed by Mozilla/Firefox it cannot be imported as a normal extension yet, just as a debug extension. 
 
-**Please also note** that to use this extension, you need an [ExchangeRate-APi](https://www.exchangerate-api.com) API key. As mentionned in the [Instalaltion](#installation) section, you need to put it in the _popup/config.js_ file, so that the code can import it as a variable. **_ONLY_** put the API key string, not the API url endpoint
+**Please also note** that to use this extension, you need an [ExchangeRate-APi](https://www.exchangerate-api.com) API key. As mentionned in the [Installation](#installation) section, you need to put it in the _popup/config.js_ file, so that the code can import it as a variable. **_ONLY_** put the API key string, not the API url endpoint
 ## Installation
 
 1. Clone the repository : 
